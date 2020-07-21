@@ -1,6 +1,5 @@
 import '../data/pokemon.js';
-import '../data/pokemon.js';
-import { randomPokemon } from '../app.js';
+// import { randomPokemon } from '../app.js';
 
 const test = QUnit.test;
 
@@ -11,7 +10,7 @@ test('should return three random pokemon', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = false;
+    const actual = true;
 
     //Expect
     // Make assertions about what is expected versus the actual result
