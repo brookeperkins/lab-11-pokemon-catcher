@@ -1,4 +1,4 @@
-import '../data/pokemon.js';
+// import '../data/pokemon.js';
 // import { randomPokemon } from '../app.js';
 
 const test = QUnit.test;
