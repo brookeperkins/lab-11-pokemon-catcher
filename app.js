@@ -1,9 +1,11 @@
 import pokemonData from './data/pokemon.js';
 import { getRandomPokemon } from './common/utils.js';
-import pokemon from './data/pokemon.js';
 
 // const catchButton = document.getElementById('catch-button');
 const radioButtons = document.querySelectorAll('input');
+let randomPokemon0 = getRandomPokemon(pokemonData);
+let randomPokemon1 = getRandomPokemon(pokemonData);
+let randomPokemon2 = getRandomPokemon(pokemonData);
 // let caughtArray = [];
 // let encounteredArray = [];
 
@@ -45,9 +47,6 @@ span2.textContent = randomPokemon2.pokemon;
 //event listener
 
 let pokemonTrio = [];
-let randomPokemon0 = getRandomPokemon(pokemonData);
-let randomPokemon1 = getRandomPokemon(pokemonData);
-let randomPokemon2 = getRandomPokemon(pokemonData);
 
 while (randomPokemon0.id === randomPokemon1.id || randomPokemon0 === randomPokemon2.id || randomPokemon1.id === randomPokemon2.id); {
     let randomPokemon0 = getRandomPokemon(pokemon);
