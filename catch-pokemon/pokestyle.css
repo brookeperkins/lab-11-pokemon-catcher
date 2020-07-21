@@ -10,7 +10,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Press Start 2P', cursive;
-    background-color: var(--color2);
+    background-color: var(--color1);
 }
 
 main {
@@ -20,23 +20,14 @@ main {
     align-items: center;
 }
 
-.gif {
-    max-width: 80%;
-    height: auto;
+p {
+    font-size: .8rem;
 }
 
-h1 {
-    font-size: 2rem;
-    padding-top: 30px;
-    color: var(--color3);
-}
-
-h2 {
-    padding: 20px;
-}
-
-a {
-    color: white;
+input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 section {
@@ -51,31 +42,34 @@ section {
     padding-bottom: var(--height);
     margin-top: var(--height);
     margin-bottom: var(--height);
-    border: solid 2px var(--color1);
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
+#pokemon-container {
+    border: solid 5px var(--color2);
+    
 }
 
+#catch-them {
+    border: solid 3px var(--color5);
+    color: darkgray;
+    font-style: italic;
+}
+
+input {
+    height: 3em;
+}
+
+button {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
 
 footer {
-    position: relative;
-    bottom: 0;
-    width: 1000px;
-    max-width: 80%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-left: 85px;
-    font-size: .7rem;
-    color: white;
     background-color: var(--color3);
-    border: solid 2px var(--color4);
+    box-shadow: var(--shadow);
 }
 

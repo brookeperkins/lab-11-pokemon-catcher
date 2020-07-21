@@ -23,8 +23,6 @@ const span0 = label0.children[2];
 input0.value = randomPokemon0.id;
 image0.src = randomPokemon0.url_image;
 span0.textContent = randomPokemon0.pokemon;
-
-console.log(randomPokemon0);
 //event listener
 
 const label1 = labels[1];
@@ -48,7 +46,6 @@ span2.textContent = randomPokemon2.pokemon;
 //event listener
 
 while (randomPokemon0.id === randomPokemon1.id || randomPokemon0 === randomPokemon2.id || randomPokemon1.id === randomPokemon2.id) {
-    randomPokemon0 = getRandomPokemon(pokemonData);
     randomPokemon1 = getRandomPokemon(pokemonData);
     randomPokemon2 = getRandomPokemon(pokemonData);
 }
