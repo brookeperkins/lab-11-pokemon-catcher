@@ -1,13 +1,12 @@
 import pokemonData from './data/pokemon.js';
-import { getRandomPokemon, findById, encounteredPokemonTotals, caughtPokemonTotals } from './common/utils.js';
+import { getRandomPokemon, findByName } from './common/utils.js';
 
 let catches = 0;
-// let caughtArray = [];
-let encounteredArray = [];
+let pokeDataArray = [];
 
 const labels = document.querySelectorAll('label');
 const catchButton = document.querySelector('#catch-button');
-const resultSpan = document.querySelector('#catches-span');
+// const resultSpan = document.querySelector('#catches-span');
 
 function setPage() {
     let randomPokemon0 = getRandomPokemon(pokemonData);
@@ -21,19 +20,18 @@ function setPage() {
 
     const label0 = labels[0];
 
-    const input0 = label0.children[0];
-    input0.addEventListener('click', eventHandler());
+    const input0 = label0.children[1];
+    input0.addEventListener('click', eventHandler);
     const image0 = label0.children[2];
     const span0 = label0.children[2];
-    encounteredPokemonTotals(encounteredArray, randomPokemon0.id);
     input0.value = randomPokemon0.id;
     image0.src = randomPokemon0.url_image;
     span0.textContent = randomPokemon0.pokemon;
 
     const label1 = labels[1];
 
-    const input1 = label1.children[0];
-    input1.addEventListener('click', eventHandler());
+    const input1 = label1.children[1];
+    input1.addEventListener('click', eventHandler);
     const image1 = label1.children[2];
     const span1 = label1.children[2];
     input1.value = randomPokemon1.id;
@@ -42,8 +40,8 @@ function setPage() {
 
     const label2 = labels[2];
 
-    const input2 = label2.children[0];
-    input2.addEventListener('click', eventHandler());
+    const input2 = label2.children[1];
+    input2.addEventListener('click', eventHandler);
     const image2 = label2.children[2];
     const span2 = label2.children[2];
     input2.value = randomPokemon2.id;
@@ -52,15 +50,13 @@ function setPage() {
 
 }
 
-function eventHandler() {
+function eventHandler(e) {
     catches++;
 
-    const clickedPokemon = document.querySelector('input:checked');
-    const pokeBall = clickedPokemon.value;
-    const caughtPokemon = findById(pokemonData, pokeBall);
+    const clickedPokemon = e.target.value;
+    const caughtPokemon = findByName(pokemonData, clickedPokemon);
 
-    caughtPokemonTotals(encounteredArray, caughtPokemon);
-    resultSpan.textContent = 'Caught a wild ' + caughtPokemon.pokemon;
+    // resultSpan.textContent = 'Caught a wild ' + caughtPokemon.pokemon;
     // console.log(catches);
 }
 
@@ -71,3 +67,5 @@ if (catches < 10){
         window.location.href = './results.html';
     });
 }
+
+setPage();

@@ -5,47 +5,46 @@ export function getRandomPokemon(pokemonData) {
     return pokemonData[randomPokemonIndex];
 }
 
-export function findById(pokemonData, pokeId) {
+export function findByName(someArray, pokemon) {
     let matchedPokemon = null;
-    const pokeNumber = Number(pokeId);
+    const name = pokemon.pokemon;
 
-    for (let i = 0; i < pokemonData.length; i++){
-        if (pokeNumber === pokemonData[i].id){
-            matchedPokemon = pokemonData[i];
+    for (let i = 0; i < someArray.length; i++){
+        if (name === someArray[i].pokemon) {
+            matchedPokemon = someArray[i];
         }
     }
     return matchedPokemon;
 }
 
-export function encounteredPokemonTotals(encounteredArray, id) {
-    let encountered = findById(encounteredArray, id);
+// export function encounteredPokemonTotals(pokeDataArray, pokemon) {
+//     let encountered = findByName(pokeDataArray, pokemon);
  
-    if (encountered) {
-        encountered.encounters++;
+//     if (encountered) {
+//         encountered.encounters++;
             
-    } else {
-        const newEncounter = {
-            id: id,
-            encounters : 1,
-            caught: 0
-        };
-        encounteredArray.push(newEncounter);
-    }
+//     } else {
+//         const newEncounter = {
+//             id: id,
+//             encounters : 1,
+//             caught: 0
+//         };
+//         encounteredArray.push(newEncounter);
+//     }
         
-}
+// }
 
-let encounteredArray = [];
 
-export function caughtPokemonTotals(caughtArray, id){
-    let caught = findById(caughtArray, id);
-    if (caught){
-        caught.caught++;   
-    } else {
-        const catchAPokemon = {
-            id: id,
-            encounters: 1,
-            caught: 1
-        };
-        encounteredArray.push(catchAPokemon);
-    }
-}
+// export function caughtPokemonTotals(pokeDataArray, id){
+//     let caught = findById(pokeDataArray, id);
+//     if (caught){
+//         caught.caught++;   
+//     } else {
+//         const catchAPokemon = {
+//             id: id,
+//             encounters: 1,
+//             caught: 1
+//         };
+//         pokeDataArray.push(catchAPokemon);
+//     }
+// }
