@@ -11,30 +11,29 @@
     <title>Catch That Pokémon!</title>
 </head>
 
-<body>
-    <header>
-    </header>
-    <!-- after you get it working, add modal div to display start screen -->
+<!-- <body> -->
     <main>
         <section id="pokemon-container">
+        <span id="catches-span"></span>
             <label>
                 <span></span>
-                <input type="radio" name="pokemon"/>
+                <input id="load-pokemon0" type="radio" name="pokemon" value="0" checked />
                 <img/ height="150px" width="150px">
             </label>
             <label>
                 <span></span>
-                <input type="radio" name="pokemon"/>
+                <input id="load-pokemon1" type="radio" name="pokemon" value="1"/>
                 <img/ height="150px" width="150px">
             </label>
             <label>
                 <span></span>
-                <input type="radio" name="pokemon"/>
+                <input id="load-pokemon2" type="radio" name="pokemon" value="2"/>
                 <img/ height="150px" width="150px">
             </label>
       <section id="catch-them">
-          <p>Look out! These are wild Pokémon!</p>
-        <button id="catch-button">CATCH!</button>
+          <p>Look out, these are wild Pokémon! 
+            <br>Choose one to catch, then run!</p>
+        <button id="catch-button">THROW POKÉBALL</button>
     </main>
     <script type="module" src="/app.js"></script>
 </body>

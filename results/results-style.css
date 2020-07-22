@@ -30,7 +30,6 @@ input {
     flex-wrap: wrap;
 }
 
-
 section {
     background-color: white;
     width: 1000px;
@@ -63,3 +62,5 @@ button {
     border-radius: 10px;
     font-family: 'Press Start 2P', cursive;
 }
+
+
