@@ -1,0 +1,65 @@
+
+body {
+    --color1: hsla(0, 100%, 50%, 1);
+    --color2: hsla(0, 100%, 40%, 1);
+    --color3: hsla(233, 57%, 51%, 1);
+    --color4: hsla(52, 100%, 50%, 1);
+    --color5: hsla(52, 66%, 42%, 1);
+    
+    --height: 30px;
+    --footer-height: 25px;
+    
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--color1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: .8rem;
+}
+
+input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+section {
+    background-color: white;
+    width: 1000px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--height);
+    padding-bottom: var(--height);
+    margin-top: var(--height);
+    margin-bottom: var(--height);
+}
+
+#pokemon-container {
+    border: solid 5px var(--color2);
+    
+}
+
+#catch-them {
+    border: solid 3px var(--color5);
+    color: darkgray;
+    font-style: italic;
+    line-height: 20px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+}

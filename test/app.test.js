@@ -16,3 +16,5 @@ test('should return three random pokemon', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
+
+//refactoring: rename and organize files and pathways in a way that makes sense
