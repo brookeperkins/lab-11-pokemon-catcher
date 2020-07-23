@@ -1,27 +1,58 @@
-// import pokeDataArray from '../app.js';
+import {
+    getPokeCart,
+    clearPokeCart,
+    mungeNames,
+    mungeCaptured,
+    mungeEncountered,
+} from '../results/results-utils.js';
 
 const ctx = document.getElementById('chart').getContext('2d');
 
-const data = [12, 19, 3, 5, 2, 3];
-const labelColors = ['red', 'blue', 'yellow', 'green', 'purple', 'orange'];
+const pokemonData = getPokeCart();
+const mungedNames = mungeNames(pokemonData);
+const mungedCaptured = mungeCaptured(pokemonData);
+const mungedEncountered = mungeEncountered(pokemonData);
 
-const myChart = new Chart(ctx, {
+const restartButton = document.getElementById('restart-button');
+
+const myChart = new Chart(ctx, { // eslint-disable-line
     type: 'bar',
     data: {
-        labels: labelColors,
+        labels: mungedNames,
         datasets: [{
-            label: '# of Votes',
-            data: data,
-            backgroundColor: labelColors
-        }]
+            label: 'Pokemon Captured',
+            data: mungedCaptured,
+            backgroundColor:
+                'white',
+            borderColor:
+                'white',
+            borderWidth: 1
+        },
+        {
+            label: 'Pokemon Encountered',
+            data: mungedEncountered,
+            backgroundColor: 
+                'rgb(255,250,205)',
+            borderColor: 
+                'rgb(255,250,205)',
+            borderWidth: 1
+        },
+        ]
     },
     options: {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
             }]
         }
     }
+});
+
+
+restartButton.addEventListener('click', () => {
+    clearPokeCart();
+    window.location = '../home-index.html';
+
 });

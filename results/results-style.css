@@ -36,6 +36,7 @@ input {
 }
 
 section {
+    border: solid 2 px var(--color3);
     background-color: white;
     width: 1000px;
     max-width: 80%;
@@ -49,23 +50,12 @@ section {
     margin-bottom: var(--height);
 }
 
-#pokemon-container {
-    border: solid 5px var(--color2);
-    
-}
-
-#catch-them {
-    border: solid 3px var(--color5);
-    color: darkgray;
-    font-style: italic;
-    line-height: 20px;
-}
 
 button {
     margin-top: 10px;
     padding: 7px;
     border-radius: 10px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P';
 }
 
 

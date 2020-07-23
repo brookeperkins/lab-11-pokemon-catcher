@@ -1,4 +1,4 @@
-//import
+import { mungeCaptured, mungeNames } from '../results/results-utils';
 
 const test = QUnit.test;
 
@@ -9,11 +9,11 @@ test('should return three random pokemon', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = mungeCaptured(pokemonArray);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
 
 //refactoring: rename and organize files and pathways in a way that makes sense
