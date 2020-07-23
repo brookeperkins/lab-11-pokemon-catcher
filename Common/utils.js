@@ -1,39 +1,33 @@
 //get a random pokemon
 export function getRandomPokemon(pokemonData) {
-    const randomPokemonIndex = Math.floor(Math.random() * pokemonData.length);
+    const randomPokemon = Math.floor(Math.random() * pokemonData.length);
     
-    return pokemonData[randomPokemonIndex];
+    return pokemonData[randomPokemon];
 }
 
-export function findByName(someArray, pokemon) {
-    let matchedPokemon = null;
-    const name = pokemon.pokemon;
-
-    for (let i = 0; i < someArray.length; i++){
-        if (name === someArray[i].pokemon) {
-            matchedPokemon = someArray[i];
-        }
-    }
-    return matchedPokemon;
+export function findByName(pokeArray, pokeName) {
+    for (let i = 0; i < pokeArray.length; i++){
+        const arrayItem = pokeArray[i];
+        if (pokeName === arrayItem.pokemon) {
+            return arrayItem;
+        } 
+    } return null;
 }
 
-// export function encounteredPokemonTotals(pokeDataArray, pokemon) {
-//     let encountered = findByName(pokeDataArray, pokemon);
+export function encounteredPokemon(pokeDataArray, pokemon) {
+    let encountered = findByName(pokeDataArray, pokemon);
  
-//     if (encountered) {
-//         encountered.encounters++;
-            
-//     } else {
-//         const newEncounter = {
-//             id: id,
-//             encounters : 1,
-//             caught: 0
-//         };
-//         encounteredArray.push(newEncounter);
-//     }
-        
-// }
-
+    if (encountered) {
+        encountered.encounters++;
+    } else {
+        const newEncounter = {
+            pokemon: pokemon,
+            encounters : 1,
+            caught: 0
+        };
+        pokeDataArray.push(newEncounter);
+    }
+}
 
 // export function caughtPokemonTotals(pokeDataArray, id){
 //     let caught = findById(pokeDataArray, id);
