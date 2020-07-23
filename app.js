@@ -9,6 +9,13 @@ const catchButton = document.querySelector('#catch-button');
 // const resultSpan = document.querySelector('#catches-span');
 
 function setPage() {
+    
+    if (catches === 10) {
+        alert(`You're out of Pokéballs!`);
+        window.location = '../results/results-index.html';
+    }
+    console.log(catches);
+
     let randomPokemon0 = getRandomPokemon(pokemonData);
     let randomPokemon1 = getRandomPokemon(pokemonData);
     let randomPokemon2 = getRandomPokemon(pokemonData);
@@ -61,11 +68,9 @@ catchButton.addEventListener('click', () => {
     const pokemonTarget = clickedPokemon.value;
     const caughtPokemon = findByName(pokeDataArray, pokemonTarget);
     caughtPokemon.caught++;
-    if (catches === 10) {
-        
-        alert(`You're out of Pokéballs!`);
-        window.location = '../results/results-index.html';
-    }
+
+    const stringyPokeData = JSON.stringify(pokeDataArray);
+    localStorage.setItem('POKESTATS', stringyPokeData);
 
     setPage();
 });
