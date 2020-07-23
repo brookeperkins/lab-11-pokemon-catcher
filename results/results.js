@@ -1,2 +1,2 @@
-import pokeDataArray from '../app.js';
+// import pokeDataArray from '../app.js';
 
