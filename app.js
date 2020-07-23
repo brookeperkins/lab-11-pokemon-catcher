@@ -1,20 +1,27 @@
 import pokemonData from './data/pokemon.js';
-import { getRandomPokemon, findById, encounteredPokemonTotals, caughtPokemonTotals } from './common/utils.js';
+import { getRandomPokemon, findByName, encounteredPokemon } from './common/utils.js';
 
 let catches = 0;
-// let caughtArray = [];
-let encounteredArray = [];
+let pokeDataArray = [];
 
 const labels = document.querySelectorAll('label');
 const catchButton = document.querySelector('#catch-button');
-const resultSpan = document.querySelector('#catches-span');
+// const resultSpan = document.querySelector('#catches-span');
 
 function setPage() {
+    
+    if (catches === 10) {
+        alert(`You're out of Pokéballs!`);
+        window.location = '../results/results-index.html';
+    }
+    console.log(catches);
+
     let randomPokemon0 = getRandomPokemon(pokemonData);
     let randomPokemon1 = getRandomPokemon(pokemonData);
     let randomPokemon2 = getRandomPokemon(pokemonData);
 
-    while (randomPokemon0.id === randomPokemon1.id || randomPokemon0 === randomPokemon2.id || randomPokemon1.id === randomPokemon2.id) {
+    while (randomPokemon0.pokemon === randomPokemon1.pokemon || randomPokemon0.pokemon === randomPokemon2.pokemon || randomPokemon1.pokemon === randomPokemon2.pokemon) {
+        randomPokemon0 = getRandomPokemon(pokemonData);
         randomPokemon1 = getRandomPokemon(pokemonData);
         randomPokemon2 = getRandomPokemon(pokemonData);
     }
@@ -22,52 +29,49 @@ function setPage() {
     const label0 = labels[0];
 
     const input0 = label0.children[0];
-    input0.addEventListener('click', eventHandler());
-    const image0 = label0.children[2];
-    const span0 = label0.children[2];
-    encounteredPokemonTotals(encounteredArray, randomPokemon0.id);
-    input0.value = randomPokemon0.id;
+    const image0 = label0.children[1];
+    const span0 = label0.children[1];
+    
+    input0.value = randomPokemon0.pokemon;
     image0.src = randomPokemon0.url_image;
     span0.textContent = randomPokemon0.pokemon;
+    encounteredPokemon(pokeDataArray, randomPokemon0.pokemon);
 
     const label1 = labels[1];
 
     const input1 = label1.children[0];
-    input1.addEventListener('click', eventHandler());
-    const image1 = label1.children[2];
-    const span1 = label1.children[2];
-    input1.value = randomPokemon1.id;
+    const image1 = label1.children[1];
+    const span1 = label1.children[1];
+    
+    input1.value = randomPokemon1.pokemon;
     image1.src = randomPokemon1.url_image;
     span1.textContent = randomPokemon1.pokemon;
+    encounteredPokemon(pokeDataArray, randomPokemon1.pokemon);
+
 
     const label2 = labels[2];
 
     const input2 = label2.children[0];
-    input2.addEventListener('click', eventHandler());
-    const image2 = label2.children[2];
-    const span2 = label2.children[2];
-    input2.value = randomPokemon2.id;
+    const image2 = label2.children[1];
+    const span2 = label2.children[1];
+    
+    input2.value = randomPokemon2.pokemon;
     image2.src = randomPokemon2.url_image;
     span2.textContent = randomPokemon2.pokemon;
-
+    encounteredPokemon(pokeDataArray, randomPokemon2.pokemon);
 }
 
-function eventHandler() {
+catchButton.addEventListener('click', () => {
     catches++;
 
     const clickedPokemon = document.querySelector('input:checked');
-    const pokeBall = clickedPokemon.value;
-    const caughtPokemon = findById(pokemonData, pokeBall);
+    const pokemonTarget = clickedPokemon.value;
+    const caughtPokemon = findByName(pokeDataArray, pokemonTarget);
+    caughtPokemon.caught++;
 
-    caughtPokemonTotals(encounteredArray, caughtPokemon);
-    resultSpan.textContent = 'Caught a wild ' + caughtPokemon.pokemon;
-    // console.log(catches);
-}
+    const stringyPokeData = JSON.stringify(pokeDataArray);
+    localStorage.setItem('POKESTATS', stringyPokeData);
 
-if (catches < 10){
-    catchButton.addEventListener('click', setPage);
-} else {
-    catchButton.addEventListener('click', () => {
-        window.location.href = './results.html';
-    });
-}
+    setPage();
+});
+setPage();
