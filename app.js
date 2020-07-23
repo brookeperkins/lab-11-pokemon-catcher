@@ -13,7 +13,8 @@ function setPage() {
     let randomPokemon1 = getRandomPokemon(pokemonData);
     let randomPokemon2 = getRandomPokemon(pokemonData);
 
-    while (randomPokemon0.pokemon === randomPokemon1.pokemon || randomPokemon0 === randomPokemon2.pokemon || randomPokemon1.pokemon === randomPokemon2.pokemon) {
+    while (randomPokemon0.pokemon === randomPokemon1.pokemon || randomPokemon0.pokemon === randomPokemon2.pokemon || randomPokemon1.pokemon === randomPokemon2.pokemon) {
+        randomPokemon0 = getRandomPokemon(pokemonData);
         randomPokemon1 = getRandomPokemon(pokemonData);
         randomPokemon2 = getRandomPokemon(pokemonData);
     }
@@ -58,10 +59,8 @@ catchButton.addEventListener('click', () => {
 
     const clickedPokemon = document.querySelector('input:checked');
     const pokemonTarget = clickedPokemon.value;
-    const caughtPokemon = findByName(pokemonData, pokemonTarget);
-    console.log(pokemonData, pokemonTarget);
-    pokeDataArray.push(caughtPokemon);
-
+    const caughtPokemon = findByName(pokeDataArray, pokemonTarget);
+    caughtPokemon.caught++;
     if (catches === 10) {
         
         alert(`You're out of Pokéballs!`);
