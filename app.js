@@ -14,7 +14,6 @@ function setPage() {
         alert(`You're out of Pokéballs!`);
         window.location = '../results/results-index.html';
     }
-    console.log(catches);
 
     let randomPokemon0 = getRandomPokemon(pokemonData);
     let randomPokemon1 = getRandomPokemon(pokemonData);
