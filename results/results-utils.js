@@ -17,7 +17,6 @@ export function mungeNames(pokeArray){
 
     return pokeNames;
 }
-mungeNames();
 
 export function mungeCaptured(pokeArray){
     const pokeCaptures = [];
