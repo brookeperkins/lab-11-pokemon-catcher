@@ -162,6 +162,6 @@ const myChart5 = new Chart(newChart5, { // eslint-disable-line
 
 restartButton.addEventListener('click', () => {
     clearPokeCart();
-    window.location = '../home-index.html';
+    window.location = '../index.html';
 
 });
