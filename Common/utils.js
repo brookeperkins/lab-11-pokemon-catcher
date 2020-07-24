@@ -28,17 +28,3 @@ export function encounteredPokemon(pokeDataArray, pokemon) {
         pokeDataArray.push(newEncounter);
     }
 }
-
-// export function caughtPokemonTotals(pokeDataArray, id){
-//     let caught = findById(pokeDataArray, id);
-//     if (caught){
-//         caught.caught++;   
-//     } else {
-//         const catchAPokemon = {
-//             id: id,
-//             encounters: 1,
-//             caught: 1
-//         };
-//         pokeDataArray.push(catchAPokemon);
-//     }
-// }
