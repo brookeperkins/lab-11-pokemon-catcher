@@ -1,4 +1,4 @@
-import { findByName } from '../common/utils.js';
+import { findByName } from '../utils.js';
 import pokeData from '../data/pokemon.js';
 
 export function getPokeCart() {
