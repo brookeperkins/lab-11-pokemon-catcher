@@ -40,7 +40,7 @@ export function mungeEncountered(pokeArray){
     return pokeEncounters;
 }
 
-export function mungePokeData(pokeArray, property){
+export function mungePokemonData(pokeArray, property){
     const pokeProperty = [];
     for (let i = 0; i < pokeArray.length; i++) {
         const pokemon = findByName(pokeData, pokeArray[i].pokemon);
