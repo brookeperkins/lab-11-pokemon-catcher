@@ -4,20 +4,20 @@ import {
     mungeNames,
     mungeCaptured,
     mungeEncountered,
-    mungePokeData,
+    mungePokemonData,
 } from '../results/results-utils.js';
 
-import pokeData from '../pokemon.js';
+import pokemonData from '../pokemon.js';
 
-const pokemonData = getPokeCart();
-const mungedNames = mungeNames(pokemonData);
-const mungedCaptured = mungeCaptured(pokemonData);
-const mungedEncountered = mungeEncountered(pokemonData);
-const height = mungePokeData(pokeData, 'height');
-const weight = mungePokeData(pokeData, 'weight');
-const type1 = mungePokeData(pokeData, 'type_1');
-const type2 = mungePokeData(pokeData, 'type_2');
-const attack = mungePokeData(pokeData, 'attack'); 
+const pokeCartData = getPokeCart();
+const mungedNames = mungeNames(pokeCartData);
+const mungedCaptured = mungeCaptured(pokeCartData);
+const mungedEncountered = mungeEncountered(pokeCartData);
+const height = mungePokemonData(pokemonData, 'height');
+const weight = mungePokemonData(pokemonData, 'weight');
+const type1 = mungePokemonData(pokemonData, 'type_1');
+const type2 = mungePokemonData(pokemonData, 'type_2');
+const attack = mungePokemonData(pokemonData, 'attack'); 
 
 const restartButton = document.getElementById('restart-button');
 

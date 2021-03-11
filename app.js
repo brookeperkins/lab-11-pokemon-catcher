@@ -1,5 +1,5 @@
-import pokemonData from './pokemon.js';
 import { getRandomPokemon, findByName, encounteredPokemon } from './utils.js';
+import pokemonData from './pokemon.js';
 
 let catches = 0;
 let pokeDataArray = [];
