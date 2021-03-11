@@ -29,7 +29,7 @@ function setPage() {
 
     const input0 = label0.children[0];
     const image0 = label0.children[1];
-    const span0 = label0.children[1];
+    const span0 = label0.children[2];
     
     input0.value = randomPokemon0.pokemon;
     image0.src = randomPokemon0.url_image;
@@ -40,7 +40,7 @@ function setPage() {
 
     const input1 = label1.children[0];
     const image1 = label1.children[1];
-    const span1 = label1.children[1];
+    const span1 = label1.children[2];
     
     input1.value = randomPokemon1.pokemon;
     image1.src = randomPokemon1.url_image;
@@ -52,7 +52,7 @@ function setPage() {
 
     const input2 = label2.children[0];
     const image2 = label2.children[1];
-    const span2 = label2.children[1];
+    const span2 = label2.children[2];
     
     input2.value = randomPokemon2.pokemon;
     image2.src = randomPokemon2.url_image;

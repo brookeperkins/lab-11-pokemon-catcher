@@ -7,7 +7,7 @@ import {
     mungePokeData,
 } from '../results/results-utils.js';
 
-import pokeData from '../data/pokemon.js';
+import pokeData from '../pokemon.js';
 
 const pokemonData = getPokeCart();
 const mungedNames = mungeNames(pokemonData);

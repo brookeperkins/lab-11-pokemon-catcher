@@ -1,5 +1,5 @@
 import { findByName } from '../utils.js';
-import pokeData from '../data/pokemon.js';
+import pokeData from '../pokemon.js';
 
 export function getPokeCart() {
     const rawCart = localStorage.getItem('POKESTATS');
