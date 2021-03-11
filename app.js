@@ -47,7 +47,6 @@ function setPage() {
     span1.textContent = randomPokemon1.pokemon;
     encounteredPokemon(pokeDataArray, randomPokemon1.pokemon);
 
-
     const label2 = labels[2];
 
     const input2 = label2.children[0];
@@ -73,4 +72,5 @@ catchButton.addEventListener('click', () => {
 
     setPage();
 });
+
 setPage();
